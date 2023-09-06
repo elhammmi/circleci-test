@@ -1,12 +1,9 @@
 version: 2.1
 jobs:
   run_and_test:
-    executor: node/default
     docker:
-      - image:circleci/node:10
+      - image: circleci/node:10
     steps:
-      - node/install-packages:
-          pkg-manager: yarn
       - run:
           command: yarn test
           name: Run tests
